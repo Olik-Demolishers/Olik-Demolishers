@@ -1,0 +1,286 @@
+/* --- Global Styles & Setup --- */
+:root {
+    --dark-blue: #1a2a47;
+    --light-bg: #f0f3f6;
+    --primary-color: #e67e22; /* A warm color for the button */
+    --text-dark: #333;
+    --border-radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Utility: Button Style --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #cf6e1f; /* Slightly darker hover */
+}
+
+/* --- 1. HEADER & NAVIGATION --- */
+.main-header {
+    background-color: var(--dark-blue);
+    padding: 15px 0;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+
+.main-nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/* --- 2. HERO SECTION --- */
+.hero-section {
+    padding: 40px 0 20px;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Text on left, images on right */
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.hero-text-box {
+    padding: 30px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hero-text-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-images-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.hero-images-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+/* --- 3. SERVICE BLOCKS UNDER HERO --- */
+.service-blocks-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.service-block {
+    flex: 1;
+    background-color: white;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.service-block h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.service-block p {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* --- 4. PROJECT GALLERY --- */
+.gallery-section {
+    padding: 40px 0;
+}
+
+.gallery-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+/* 1. Layout the Logo and Text side-by-side */
+.logo-group {
+    display: flex; /* Aligns items horizontally */
+    align-items: center; /* Vertically centers the logo and text */
+    gap: 10px; /* Adds a small space between the logo and the text */
+}
+
+/* 2. Size the Logo Image */
+.logo-img {
+    height: 40px; /* Set a fixed height for the logo */
+    width: auto; /* Allows the width to scale proportionally */
+    /* Add a small white background if the image isn't already cut out */
+    background: white;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+/* 3. Style the Company Name */
+.logo {
+    font-size: 24px; /* Adjust text size to be prominent */
+    margin: 0; /* Remove default margin for cleaner alignment */
+    color: white; /* Ensure text is visible against the blue header */
+}
+
+/* --- 5. FOOTER --- */
+.main-footer {
+    background-color: white;
+    padding: 20px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.footer-links a, .footer-action a {
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr; /* Stack text and images on smaller screens */
+    }
+
+    .hero-images-grid {
+        margin-top: 20px;
+    }
+
+    .service-blocks-grid {
+        flex-wrap: wrap;
+    }
+
+    .service-block {
+        flex: 1 1 45%; /* Allow two blocks per row */
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two images per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header .container {
+        flex-direction: column;
+        .main-header {
+    /* Set the header to a fixed position */
+    position: fixed;
+    /* Ensures it sticks to the top of the browser window */
+    top: 0;
+    /* Spans the full width of the viewport */
+    width: 100%;
+    /* Ensures the header appears above other content when scrolling */
+    z-index: 1000;
+    /* Add background color for visibility when fixed */
+    background-color: #1E3A8A; /* Or whatever dark blue color you are using */
+    /* Other existing header styles go here */
+    padding: 20px 0; /* Example padding */
+}
+    }
+    .main-nav ul {
+        margin-top: 10px;
+        gap: 15px;
+    }
+
+    .service-block {
+        flex: 1 1 100%; /* One block per row */
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column on tiny screens */
+    }
+
+    .main-footer .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
