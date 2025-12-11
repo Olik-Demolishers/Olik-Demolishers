@@ -18,7 +18,7 @@ body {
     background-color: var(--light-bg);
     color: var(--text-dark);
     line-height: 1.6;
-    
+
 }
 
 .container {
@@ -283,4 +283,93 @@ body {
         flex-direction: column;
         gap: 15px;
     }
+    /* --- Start of Mobile Optimization (Max Width: 600px) --- */
+@media (max-width: 600px) {
+
+    /* 1. Header & Navigation */
+    .main-header .container {
+        /* Stack the logo group and navigation vertically */
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .main-nav ul {
+        /* Make navigation links take full width and stack */
+        flex-direction: column;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .main-nav li {
+        margin: 5px 0;
+        width: 100%; /* Links take full horizontal space */
+        text-align: center;
+    }
+
+    .main-nav a {
+        padding: 8px 0;
+        display: block; /* Ensures the click target is large */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 2. Hero Section Layout */
+    .hero-content {
+        /* Stack text box and images vertically */
+        flex-direction: column;
+    }
+
+    .hero-text-box {
+        padding: 20px;
+    }
+
+    .hero-text-box h2 {
+        font-size: 1.5em; /* Shrink headline size */
+    }
+
+    .hero-images-grid {
+        /* Stack the two images vertically and make them full width */
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    /* Make sure all images scale down */
+    .hero-images-grid img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 3. Service Blocks */
+    .service-blocks-grid {
+        /* Change the 4-column layout to a 2-column or 1-column layout for phones */
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    /* 4. Gallery Grid */
+    .gallery-grid {
+        /* Change the 4-column gallery to a 2-column layout */
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    /* 5. Footer */
+    .main-footer .container {
+        /* Stack footer elements vertically */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-action {
+        margin-top: 15px;
+    }
+
+    /* Adjust body padding for the sticky header on small screens */
+    body {
+        /* This padding ensures content doesn't hide under the fixed header */
+        padding-top: 150px; /* May need adjustment based on new header height */
+    }
+}
+/* --- End of Mobile Optimization --- */
 }
