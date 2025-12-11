@@ -372,4 +372,11 @@ body {
     }
 }
 /* --- End of Mobile Optimization --- */
+/* General footer contact alignment */
+    .footer-contact p {
+    /* Ensures multiple lines start at the same point */
+    text-align: left; 
+    /* Adds consistent spacing between the phone number entries */
+    line-height: 1.6; 
+}
 }
